@@ -1,0 +1,335 @@
+/****** CSS VARIABLES
+
+  ********/
+
+  :root{
+    --light-pink: #BDA5AD;
+    --maroon: #874C63;
+    --dark-blue: #2F4858;
+    --medium-magenta-pink: #B46169;
+    --white-smoke: #F6F2F2;
+    --yellow: #FFCB62;
+  
+  
+     --black: #000000;
+     --white: #FFFFFF;
+     --gray: #D9D9D9;
+  
+  }
+  
+  /****** BASE STYLING AND RESETS
+  
+    ********/
+  *{
+    box-sizing: border-box;
+  }
+  
+  
+  html, body {
+    background-color:#BDA5AD;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  
+  /****** CONTAINER FOR THE SIDEBAR AND MAIN CHAT INTERFACE AREA
+  
+    ********/
+  
+  .container{
+     display: flex;
+     flex-direction: row;
+     width: 100%;
+     height: 800px;
+     padding: 0;
+     margin: 0;
+  }
+  
+  /****** MAIN SECTIONS OF THE CHAT APP 
+  
+    main -> sender info, main chat area, text input area
+    aside -> contacts and profile container
+  
+    ********/
+  
+  main{
+    flex: 1 0 700px;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  aside{
+  
+    flex: 0 0 380px;
+    background-color: var(--maroon);
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+  }
+  
+  /****** ASIDE -  SIDEBAR 
+  
+    container for contacts and user profile
+  
+  ********/
+  
+  
+  /******     USER PROFILE CONTAINER ******/
+  
+  #user-profile-container{
+    flex: 0 0 150px;
+    background-color: var(--maroon);
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  #user-profile-container > :nth-child(1){
+    width: 60px;
+    margin-right: 5px;
+  }
+  
+  #user-profile-container > :nth-child(2){
+    margin-right: 5px;
+    font-size: 25px;
+    color: white;
+  }
+  
+  #user-profile-container > :nth-child(3){
+    margin-right: 5px;
+  }
+  
+  #user-profile-container > :nth-child(4){
+    background-color: var(--dark-blue);
+    color: white;
+    width: 300px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
+  
+  
+  /******     CONTACT CONTAINER ******/
+  
+  .contact-container{
+    flex: 0 0 100px;
+    background-color: var(--maroon);
+  
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 10px;
+    color: white;
+    border-bottom: thin solid white;
+  }
+  
+  .contact-container > :nth-child(1){
+    background-color: none;
+  }
+  
+  .contact-container > :nth-child(2){
+    background-color: none;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  .contact-container > :nth-child(2) > :nth-child(1){
+    font-size: 20px;
+  }
+  
+  .contact-container > :nth-child(2) > :nth-child(2){
+    font-size: 13px;
+  }
+  
+  .contact-container > :nth-child(2) h5{
+    margin-bottom: 5px;
+    margin-top: 0;
+  }
+  
+  
+  .contact-container > :nth-child(3){
+   
+    flex: 1 0 120px;
+    background-color: none;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    
+  }
+  
+  .contact-container > :nth-child(3) > :nth-child(1){
+    flex-basis: 80px;
+    margin: 0;
+    color: white;
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  
+  .contact-container > :nth-child(3) > :nth-child(2){
+    border-radius: 15px;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    text-align: center;
+    background-color: #FFCB62;
+  }
+  
+  .selected-contact{
+    background-color: var(--dark-blue);
+  }
+  
+  /****** MAIN SECTION ******/
+  
+  
+  /******     HEADER ******/
+  
+  header{
+    flex: 0 0 100px;
+    background-color: var(--medium-magenta-pink);
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /******  
+    contains the avatar of the currently
+    selected contact
+  ******/
+  
+  #avatar-container{
+    flex: 0 0 100px;
+    background-color: none;
+    padding-left: 20px;
+  
+    
+  }
+  
+  /******  
+    contains the name and status of the currently 
+    selected contact
+  ******/
+  
+  #status-container{
+  
+    flex: 1 2 auto;
+    height: 80px;
+    background-color: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+  }
+  
+  #status-container > :first-child{
+    margin: 0;
+    background-color: none;
+  }
+  
+  #status-container > :last-child{
+    margin: 0;
+    background-color: none;
+  }
+  
+  /******  
+    formatting for the main chat area 
+    where all the messages beteen sender and
+    receiver are displayed
+  ******/
+  
+  
+  #chat-area{
+    flex: 1 0 auto;
+    flex-direction: column;
+    background-color: antiquewhite;
+    display: flex;
+    padding: 10px 15px;
+  }
+  
+  /******  
+    common styling for sender-containers and
+    receiver containers
+  ******/
+  
+  .message-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .avatar{
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  
+  
+  .message-container > :last-child{
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    flex: 0 0 600px;
+  }
+  
+  
+  .sender-message > :first-child{
+    margin-right: 10px;
+  }
+  
+  .receiver-message{
+    flex-direction: row-reverse;
+  }
+  
+  .receiver-message > :first-child{
+    margin-left: 10px;
+  }
+  
+  
+  /******     INPUT AREA ******/
+  
+  /******  
+    common styling for the input area
+    at the bottom of the main chat area
+  ******/
+  .input-area{
+    
+    flex: 0 0 80px;
+    background-color: beige;
+  
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  
+  
+  .input-area textarea{
+    flex: 1 1 auto;
+    font-family: Verdana;
+    padding: 10px 10px;
+    font-size: 20px;
+    line-height: 20px;
+    border: none;
+  }
+  
+  #send-button{
+  
+    flex: 0 0 100px;
+    border: none;
+    background-color: lightgreen;
+    color: white;
+  }
